@@ -23,14 +23,13 @@ jobs:
   test:
     runs-on: ubuntu-latest
     
-    steps:
-# Removing getsentry github app step to finish tests    
-#      - name: Install my-app token
-#        id: my-app
-#        uses: getsentry/action-github-app-token@v3
-#        with:
-#          app_id: ${{ secrets.APP_ID }}
-#          private_key: ${{ secrets.APP_PRIVATE_KEY }}
+    steps:   
+      - name: Install my-app token
+        id: my-app
+        uses: getsentry/action-github-app-token@v3
+        with:
+          app_id: ${{ secrets.APP_ID }}
+          private_key: ${{ secrets.APP_PRIVATE_KEY }}
       - uses: actions/checkout@v5
       - name: Add outside users to organization
         run: |
